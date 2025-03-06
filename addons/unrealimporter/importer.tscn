@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctcd8gtt7ls68"]
+
+[ext_resource type="Script" uid="uid://cjd65tba21dmk" path="res://addons/unrealimporter/importer.gd" id="1_mesuj"]
+
+[node name="UnrealImporter" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mesuj")
+
+[node name="ImportButton" type="Button" parent="."]
+layout_mode = 2
+text = "Import"
+
+[connection signal="pressed" from="ImportButton" to="." method="_on_import_button_pressed"]

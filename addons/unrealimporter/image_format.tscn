@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bugvjcypccw30"]
+
+[ext_resource type="Script" uid="uid://dq75sha1atwrk" path="res://addons/unrealimporter/image_format.gd" id="1_4mxjk"]
+
+[node name="ImageFormat" type="HFlowContainer"]
+visible = false
+script = ExtResource("1_4mxjk")
+
+[node name="AddStuffContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="AddLineEdit" type="LineEdit" parent="AddStuffContainer"]
+visible = false
+layout_mode = 2
+
+[node name="AddButton" type="Button" parent="AddStuffContainer"]
+custom_minimum_size = Vector2(31, 31)
+layout_mode = 2
+text = "+"
+
+[connection signal="focus_exited" from="AddStuffContainer/AddLineEdit" to="." method="_on_add_line_edit_focus_exited"]
+[connection signal="text_submitted" from="AddStuffContainer/AddLineEdit" to="." method="_on_add_line_edit_text_submitted"]
+[connection signal="pressed" from="AddStuffContainer/AddButton" to="." method="_on_add_button_pressed"]

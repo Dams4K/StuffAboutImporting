@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://bceph2rquy06j"]
+
+[ext_resource type="PackedScene" uid="uid://c5i0aids8tj0o" path="res://assets/scenes/sm_TrashBag_01_01.tscn" id="1_u5ktm"]
+[ext_resource type="PackedScene" uid="uid://yeva7u162mdb" path="res://assets/scenes/sm_WallA_02_04.tscn" id="2_3m1hs"]
+[ext_resource type="PackedScene" uid="uid://cydp11bnum1sx" path="res://assets/scenes/sm_CartonBox_01_01.tscn" id="3_ia432"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ia432"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_hlada"]
+sky_material = SubResource("ProceduralSkyMaterial_ia432")
+
+[sub_resource type="Environment" id="Environment_fu0tf"]
+background_mode = 1
+sky = SubResource("Sky_hlada")
+tonemap_mode = 4
+glow_enabled = true
+
+[node name="World2" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fu0tf")
+
+[node name="sm_TrashBag_01_01" parent="." instance=ExtResource("1_u5ktm")]
+
+[node name="sm_WallA_02_04" parent="." instance=ExtResource("2_3m1hs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93202, 0, -1.2564)
+
+[node name="sm_WallA_02_05" parent="." instance=ExtResource("2_3m1hs")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.66798, 0, 3.5436)
+
+[node name="sm_CartonBox_01_01" parent="." instance=ExtResource("3_ia432")]
+transform = Transform3D(-1.80337e-08, 0.412564, -0.910929, -0.975095, -0.202032, -0.0915012, -0.221787, 0.888242, 0.402289, -2.4916, 0.212246, -0.830544)
+
+[node name="sm_CartonBox_01_02" parent="." instance=ExtResource("3_ia432")]
+transform = Transform3D(1.89414e-08, -0.433329, -0.901236, -1, -4.37114e-08, -2.11758e-22, -3.93943e-08, 0.901236, -0.433329, -1.4604, 0.2, -0.702408)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.971764, -0.00969566, 0.235757, 0, 0.999155, 0.0410909, -0.235956, -0.0399307, 0.970943, 1.11995, 2.34041, 6.57223)
+light_energy = 16.0
+light_indirect_energy = 4.221
+spot_range = 12.7992
+spot_angle = 5.4822
