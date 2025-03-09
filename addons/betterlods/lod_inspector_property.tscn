@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://bahod67ix1u03"]
+
+[ext_resource type="Script" uid="uid://beft2rskym2k0" path="res://addons/betterlods/lod_inspector_property.gd" id="1_8c3mc"]
+
+[node name="LodInspectorProperty" type="HSplitContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+drag_area_highlight_in_editor = true
+script = ExtResource("1_8c3mc")
+metadata/_custom_type_script = "uid://bpnah6bbw31pu"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.556953, 0.556953, 0.556953, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.129558, 0.129558, 0.129558, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.927918, 0.561215, 0.615945, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.381255, 0.766601, 0.858723, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.496627, 0.82927, 0.530414, 1)

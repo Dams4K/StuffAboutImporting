@@ -31,6 +31,20 @@ func preview_scene(node: Node3D) -> void:
 	
 	_update_camera()
 
+func save(path: String):
+	if scene == null:
+		return
+	
+	add_owner(scene, scene)
+	var packed_scene = PackedScene.new()
+	packed_scene.pack(scene)
+	ResourceSaver.save(packed_scene, path)
+
+func add_owner(s_owner: Node, parent: Node):
+	for child in parent.get_children():
+		child.owner = s_owner
+		add_owner(s_owner, child)
+
 func calculate_aabb(scene: Node3D) -> AABB:
 	var mesh_instances: Array[Node] = scene.find_children("*", "MeshInstance3D")
 	

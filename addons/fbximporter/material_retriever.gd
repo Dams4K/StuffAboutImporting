@@ -127,6 +127,7 @@ func retrieve_single_mesh_single_mat(fbx_path: String, material: StandardMateria
 		material.ao_enabled = ao_texture != null
 		material.ao_texture = ao_texture
 
+
 func get_image_path_by_fbx_name(fbx_name: String, texture_type: TextureType, images: PackedStringArray) -> String:
 	var lowered_texture_name = _get_texture_name(texture_type).to_lower()
 	var formatted_fbx_name = import_settings.format_fbx_name(fbx_name)

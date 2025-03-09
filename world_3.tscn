@@ -1,3 +1,34 @@
-[gd_scene format=3 uid="uid://buf2ooeiecge2"]
+[gd_scene load_steps=5 format=3 uid="uid://buf2ooeiecge2"]
+
+[ext_resource type="PackedScene" uid="uid://ddht568q4b7wv" path="res://assets/leather_luggage_suitcase_wk2iafu_low/Leather_Luggage_Suitcase_wk2iafu_Low.tscn" id="1_1ivc2"]
+[ext_resource type="PackedScene" uid="uid://p2pa4128abp3" path="res://assets/leather_luggage_suitcase_wk2iafu_high/Leather_Luggage_Suitcase_wk2iafu_High.tscn" id="2_1qr7s"]
+[ext_resource type="PackedScene" uid="uid://742mup873lym" path="res://assets/leather_luggage_suitcase_wk2iafu_mid/Leather_Luggage_Suitcase_wk2iafu_Mid.tscn" id="2_xnej2"]
+[ext_resource type="Script" uid="uid://cr36ekmoom2lb" path="res://addons/betterlods/lod_stacker_3d.gd" id="4_xnej2"]
 
 [node name="World3" type="Node3D"]
+
+[node name="Leather_Luggage_Suitcase" type="Node3D" parent="."]
+
+[node name="Leather_Luggage_Suitcase_wk2iafu_Low" parent="Leather_Luggage_Suitcase" instance=ExtResource("1_1ivc2")]
+
+[node name="wk2iafu_LOD0_TIER3_000" parent="Leather_Luggage_Suitcase/Leather_Luggage_Suitcase_wk2iafu_Low/world_root" index="0"]
+visibility_range_begin = 5.0
+
+[node name="Leather_Luggage_Suitcase_wk2iafu_Mid" parent="Leather_Luggage_Suitcase" instance=ExtResource("2_xnej2")]
+
+[node name="wk2iafu_LOD0_TIER2_000" parent="Leather_Luggage_Suitcase/Leather_Luggage_Suitcase_wk2iafu_Mid/world_root" index="0"]
+visibility_range_begin = 1.0
+visibility_range_end = 5.0
+
+[node name="Leather_Luggage_Suitcase_wk2iafu_High" parent="Leather_Luggage_Suitcase" instance=ExtResource("2_1qr7s")]
+
+[node name="wk2iafu_LOD0_TIER1_000" parent="Leather_Luggage_Suitcase/Leather_Luggage_Suitcase_wk2iafu_High/world_root" index="0"]
+visibility_range_end = 1.0
+
+[node name="LODStacker3D" type="Node3D" parent="."]
+script = ExtResource("4_xnej2")
+metadata/_custom_type_script = "uid://cr36ekmoom2lb"
+
+[editable path="Leather_Luggage_Suitcase/Leather_Luggage_Suitcase_wk2iafu_Low"]
+[editable path="Leather_Luggage_Suitcase/Leather_Luggage_Suitcase_wk2iafu_Mid"]
+[editable path="Leather_Luggage_Suitcase/Leather_Luggage_Suitcase_wk2iafu_High"]
